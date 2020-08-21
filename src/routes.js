@@ -38,6 +38,12 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 
+// Networth
+const Portfolio = React.lazy(() => import('./views/networth/portfolio/Portfolio'));
+
+// Utilities
+const Gamblers = React.lazy(() => import('./views/utilities/gamblers/Gamblers'));
+
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -78,7 +84,14 @@ const routes = [
   { path: '/notifications/toaster', name: 'Toaster', component: Toaster },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/users', exact: true,  name: 'Users', component: Users },
-  { path: '/users/:id', exact: true, name: 'User Details', component: User }
+  { path: '/users/:id', exact: true, name: 'User Details', component: User },
+
+  // Networth
+  { path: '/networth/portfolio', name: 'Portfolio', component: Portfolio },
+
+  // Utilities
+  { path: '/utilities/gamblers', name: 'Gamblers', component: Gamblers }
+
 ];
 
 export default routes;

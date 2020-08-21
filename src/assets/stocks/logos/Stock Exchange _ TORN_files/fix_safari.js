@@ -1,0 +1,1 @@
+jQuery(function(){var isSafari=navigator.userAgent.indexOf('Safari')!=-1;var isNotChrome=navigator.userAgent.indexOf('Chrome')==-1;if(isSafari&&isNotChrome){$('head').append('<link rel="stylesheet" type="text/css" href="/css/style/fix-safari.css" />');}});

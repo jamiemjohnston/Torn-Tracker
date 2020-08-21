@@ -130,11 +130,29 @@ import {
   cilWarning
 } from '@coreui/icons'
 
+import { 
+  cil3d,
+  cilBarChart,
+  cilLoopCircular,
+  cilWeightlifitng,
+  cilUserX,
+  cilMoney
+} from '@coreui/icons'
+
 export const icons = Object.assign({}, {
   sygnet,
   logo,
   logoNegative
 }, {
+
+  // Custom Imports
+  cil3d,
+  cilBarChart,
+  cilLoopCircular,
+  cilWeightlifitng,
+  cilUserX,
+  cilMoney,
+
   cilAlignCenter,
   cilAlignLeft,
   cilAlignRight,

@@ -1,0 +1,1 @@
+function installServiceWorkders(){if(navigator&&'serviceWorker'in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/js/serviceWorkers/main_sw.js',{scope:'/'})});}};installServiceWorkders();

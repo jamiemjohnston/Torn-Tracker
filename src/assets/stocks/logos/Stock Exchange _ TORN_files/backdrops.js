@@ -1,0 +1,9 @@
+$(document).ready(function(){var $header=$('#topHeader');var $headerWrapperTop=$header&&$header.find('.header-wrapper-top');var $headerWrapperBottom=$header&&$header.find('.header-wrapper-bottom');var bgDesktop=document.getElementsByClassName('custom-bg-desktop')[0];var bgMobile=document.getElementsByClassName('custom-bg-mobile')[0];var $bgDesktop=$(bgDesktop);var $bgMobile=$(bgMobile);var timeout;function getTopOffset(){return getBrowserWidth()<=minTabletSize?getTopOffsetForMobileView():getTopOffsetForDesktopView()}
+function getTopOffsetForDesktopView(){if($headerWrapperTop&&$headerWrapperBottom){return $headerWrapperTop.outerHeight()+$headerWrapperBottom.outerHeight();}
+return 0}
+function getTopOffsetForMobileView(){var $sidebar=$('#sidebarroot');var sidebarHeight=$sidebar?$sidebar.outerHeight():0;var headerHeight=getTopOffsetForDesktopView();return headerHeight+sidebarHeight;}
+function setTopOffset(topOffset){$bgDesktop.css('top',topOffset+'px');$bgMobile.css('top',topOffset+'px');}
+if(bgDesktop&&bgMobile){var topOffset=getTopOffset();setTopOffset(topOffset);$(window).resize(function(){clearTimeout(timeout);function updateBackdropsOffset(){topOffset=getTopOffset();stickyBackdrop(topOffset,bgDesktop);stickyBackdrop(topOffset,bgMobile);}
+timeout=setTimeout(updateBackdropsOffset,100);});window.changeBackdropTopOffset=function(){topOffset=getTopOffset();stickyBackdrop(topOffset,bgDesktop);stickyBackdrop(topOffset,bgMobile);}
+function stickyBackdrop(sticky,stickyBg){if(window.pageYOffset>sticky){stickyBg.classList.add('sticky');setTopOffset(0);}else{stickyBg.classList.remove('sticky');setTopOffset(topOffset);}}
+window.addEventListener('scroll',function(){stickyBackdrop(topOffset,bgDesktop);stickyBackdrop(topOffset,bgMobile);});}});
